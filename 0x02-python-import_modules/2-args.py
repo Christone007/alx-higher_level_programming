@@ -17,6 +17,6 @@ def myfunc(argument):
         for i in range(1, argc + 1):
             print("{:d}: {:s}".format(i, argument[i]))
 
+
 if __name__ == "__main__":
     myfunc(sys.argv)
-
