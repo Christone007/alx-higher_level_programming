@@ -7,11 +7,12 @@ def myfunc(arguments):
 
     argc = len(arguments) - 1
     operators = "+-*/"
-    operator = arguments[2]
 
     if argc != 3:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
+
+    operator = arguments[2]
 
     if operator not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
