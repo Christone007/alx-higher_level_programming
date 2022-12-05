@@ -37,7 +37,7 @@ int is_palindrome(listint_t **head)
 	count = count_listint(p1);
 	j = 1;
 
-	if (count == 0)
+	if (p1 == NULL)
 		return (1);
 
 	while (p1 != NULL)
