@@ -30,11 +30,12 @@ size_t count_listint(const listint_t *h)
 int is_palindrome(listint_t **head)
 {
 	listint_t *p1, *p2;
-	size_t count, i;
+	size_t count, i, j;
 
 	p1 = *head;
 	p2 = *head;
 	count = count_listint(p1);
+	j = 1;
 
 	if (count == 0)
 		return (1);
@@ -48,7 +49,10 @@ int is_palindrome(listint_t **head)
 
 		if (p1->n == p2->n)
 		{
+			if (i == j || i + 1 == j)
+				return (1);
 			p1 = p1->next;
+			j++;
 			count--;
 			p2 = *head;
 		}
