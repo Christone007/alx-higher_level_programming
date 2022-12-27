@@ -3,6 +3,7 @@
 of classes in python
 """
 
+
 class Square:
     """This is an empty square class.
 
