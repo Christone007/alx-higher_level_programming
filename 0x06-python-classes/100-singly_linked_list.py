@@ -3,6 +3,7 @@
 a singly-linked list
 """
 
+
 class Node:
     """Defines a single node of a singly linked list
 
@@ -51,6 +52,8 @@ class SinglyLinkedList:
 
     def __str__(self):
         my_list = ""
+        if self.__head is None:
+            return my_list
         current = self.__head
         while current.next_node is not None:
             my_list = my_list + str(current.data) + "\n"
