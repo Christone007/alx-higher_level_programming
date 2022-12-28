@@ -1,8 +1,14 @@
 #!/usr/bin/python3
-
+"""This module contains classes for defining a node and
+a singly-linked list
+"""
 
 class Node:
     """Defines a single node of a singly linked list
+
+    Attributes:
+        data(int): The value stored in the node
+        next_node(Node): The pointer to the next node
 
     """
     def __init__(self, data, next_node=None):
@@ -25,7 +31,7 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if value != None:
+        if value is not None:
             if type(value) != type(self):
                 raise TypeError("next_node must be a Node object")
             else:
@@ -34,10 +40,11 @@ class Node:
             self.__next_node = None
 
 
-
 class SinglyLinkedList:
     """ Defines a singly-linked list of 'Nodes'
 
+    Attributes:
+        __head: The head of the linked-list
     """
     def __init__(self):
         self.__head = None
@@ -50,7 +57,6 @@ class SinglyLinkedList:
             current = current.next_node
         my_list += str(current.data)
         return my_list
-
 
     def sorted_insert(self, value):
         newnode = Node(value)
