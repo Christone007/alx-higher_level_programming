@@ -53,57 +53,44 @@ class SinglyLinkedList:
 
 
     def sorted_insert(self, value):
-        print("Inserting {}".format(value))
         newnode = Node(value)
 
         if self.__head is None:
             self.__head = newnode
-            print(f"Inserted first node value of {value}")
         else:
             current = self.__head
+
             if current.next_node is None:
-                print("Only one node here")
                 if current.data >= value:
                     newnode.next_node = current
                     self.__head = newnode
-                    print("Inserted Successfully..replace first")
                 else:
                     current.next_node = newnode
-                    print("Inserted Successfully")
+
             elif (current.next_node.next_node is None):
-                print("Only two nodes are here")
                 if current.data >= value:
                     newnode.next_node = current
                     self.__head = newnode
-                    print("Inserted Successfully..replace first")
                 elif current.next_node.data >= value:
                     newnode.next_node = current.next_node
                     current.next_node = newnode
-                    print("Inserted Successfully")
                 else:
                     current.next_node.next_node = newnode
-                    print("Inserted Successfully")
+
             else:
-                print("More than two nodes")
                 fastnode = self.__head.next_node
                 current = self.__head
 
                 if current.data >= value:
                     newnode.next_node = current
                     self.__head = newnode
-                    print("Inserted successfully..replace first")
                     return
                 while fastnode is not None:
                     if fastnode.data >= value:
-                        print("Fast node is greater")
                         newnode.next_node = fastnode
                         current.next_node = newnode
-                        print("Inserted Successfully")
                         return
-                    print("Fastnode is less")
                     fastnode = fastnode.next_node
                     current = current.next_node
 
                 current.next_node = newnode
-                print("Inserted Successfully")
-
