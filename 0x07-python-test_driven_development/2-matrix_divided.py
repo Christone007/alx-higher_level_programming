@@ -4,7 +4,7 @@ elements of a matrix by a certain number
 """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(matrix="", div=""):
     """Divides each element of a matrix by a number `div`
     and returns a new matrix
     >>> matrix_divided([[5], [4]], 1)
