@@ -1,0 +1,27 @@
+=================================================
+HOW TO USE `3-say_my_name.py` MODULE
+=================================================
+The module defines only a single function which 
+takes two string arguments and prints them together
+as a single space-sperated sting
+
+Example:
+::  
+    >>> say_my_name = __import__("3-say_my_name").say_my_name    
+    >>> say_my_name("Emeka", "Nwaburu")
+    Emeka Nwaburu
+
+    >>> say_my_name("Emeka")
+    Emeka 
+
+`first_name` and `last_name` must be strings
+::
+    >>> say_my_name(5,"")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Emeka", 8)
+    Traceback (most recent call last):
+	...
+    TypeError: last_name must be a string
