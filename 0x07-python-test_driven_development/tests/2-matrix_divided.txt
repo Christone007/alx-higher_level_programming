@@ -5,7 +5,7 @@ HOW TO USE `2-matrix_divided.py`
 Divides each element of a matrix by a number `div`
 and returns a new matrix
 
->>> matrix_divide = __import__("2-matrix_divided").matrix_divide
+>>> matrix_divide = __import__("2-matrix_divided").matrix_divided
 
 `matrix` must be a list of lists of integers or floats, otherwise a TypeError is raised
 

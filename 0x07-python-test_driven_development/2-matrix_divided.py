@@ -4,13 +4,13 @@ elements of a matrix by a certain number
 """
 
 
-def matrix_divide(matrix, div):
+def matrix_divided(matrix, div):
     """Divides each element of a matrix by a number `div`
     and returns a new matrix
-    >>> matrix_divide([[5], [4]], 1)
+    >>> matrix_divided([[5], [4]], 1)
     [[5.0], [4.0]]
 
-    >>> matrix_divide([[5, 2], [3, 2]], 1.0)
+    >>> matrix_divided([[5, 2], [3, 2]], 1.0)
     [[5.0, 2.0], [3.0, 2.0]]
     """
 
