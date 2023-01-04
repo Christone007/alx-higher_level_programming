@@ -18,3 +18,6 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_string(self):
         self.assertAlmostEqual(max_integer("aecdb"), "e")
+
+    def test_float(self):
+        self.assertAlmostEqual(max_integer([2.3, 1.0, 5.7]), 5.7)
