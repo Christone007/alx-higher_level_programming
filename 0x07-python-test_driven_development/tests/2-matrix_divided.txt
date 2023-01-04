@@ -16,9 +16,14 @@ and returns a new matrix
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-    >>> matrix_divide(None, 3)
+    >>> matrix_divide([])
     Traceback (most recent call last):
         ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divide()
+    Traceback (most recent call last):
+	...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
 
     >>> matrix_divide([[3, 2], ["Aop", 3]], 3)
@@ -31,12 +36,6 @@ and returns a new matrix
 
     >>> matrix_divide([[3, 8], [12, 11]], -3)
     [[-1.0, -2.67], [-4.0, -3.67]]
-
-    >>> matrix_divide(None, 4)
-    Traceback (most recent call last):
-	...
-    TypeError: matrix must be a matrix (list of lists) of integers/floats
-    
 
 `matrix` rows must all be of the same size
 
