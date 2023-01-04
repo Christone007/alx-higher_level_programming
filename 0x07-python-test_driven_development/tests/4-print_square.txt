@@ -1,0 +1,50 @@
+=========================================
+TESTS FOR THE MODULE `4-print_square.txt`
+=========================================
+
+The module contains only a single function
+which prints a square of a defined size
+
+>>> print_square = __import__('4-print_square').print_square
+
+Normal Function Test
+::
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+    >>> print_square(1)
+    #
+
+    >>> print_square(0)
+
+Size must be an integer
+::
+    >>> print_square('a')
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+    >>> print_square(5+6j)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+    >>> print_square(3.7)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+`size` must be >= 0
+::
+    >>> print_square(-5)
+    Traceback (most recent call last):
+	...
+    ValueError: size must be >= 0
+
+    >>> print_square(-1.6)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
