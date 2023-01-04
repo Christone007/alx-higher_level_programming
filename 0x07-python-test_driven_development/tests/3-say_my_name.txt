@@ -9,7 +9,7 @@ Example:
 ::  
     >>> say_my_name = __import__("3-say_my_name").say_my_name    
     >>> say_my_name("Emeka", "Nwaburu")
-    Emeka Nwaburu
+    My name is Emeka Nwaburu
 
     >>> say_my_name("Emeka")
     My name is Emeka 
