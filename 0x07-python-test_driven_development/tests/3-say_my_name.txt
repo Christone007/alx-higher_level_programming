@@ -12,7 +12,7 @@ Example:
     Emeka Nwaburu
 
     >>> say_my_name("Emeka")
-    Emeka 
+    My name is Emeka 
 
 `first_name` and `last_name` must be strings
 ::
