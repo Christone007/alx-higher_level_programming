@@ -48,3 +48,10 @@ Size must be an integer
     Traceback (most recent call last):
 	...
     TypeError: size must be an integer
+
+Missing one argument
+::
+    >>> print_square()
+    Traceback (most recent call last):
+	 ...
+    TypeError: size must be an integer
