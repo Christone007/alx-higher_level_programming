@@ -2,7 +2,7 @@
 """This module defines a function that prints a name"""
 
 
-def say_my_name(first_name, last_name=""):
+def say_my_name(first_name="", last_name=""):
     """This function simply prints a fullname
 
     ::
