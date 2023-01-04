@@ -5,7 +5,7 @@ to parse text"""
 
 def text_indentation(text=""):
     """Function that parses text to create
-    new lines seperated by a newline after 
+    new lines seperated by a newline after
     every `:`, `?`, and `.` character"""
 
     if type(text) is not str:
@@ -21,7 +21,7 @@ def text_indentation(text=""):
 
     while i < len(text):
         print(text[i], end="")
-        if text[i] in ['.','?',':']:
+        if text[i] in ['.', '?', ':']:
             print("\n")
             while text[i + 1] == " ":
                 i += 1
