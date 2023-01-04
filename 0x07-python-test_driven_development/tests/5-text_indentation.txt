@@ -1,0 +1,83 @@
+=================================================
+DOCTESTS FOR MODULE `5-text_indentation.py
+=================================================
+The module contains a function that is capable of
+parsing a string.
+
+The string is parsed such that two new lines are 
+inserted after each `.`, `?` or `:` character.
+
+Spaces are not allowed at the end or beginning of a
+line
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Normal Function Tests
+::
+    >>> text_indentation("This is? A normal: Line for. Testing")
+    This is?
+    <BLANKLINE>
+    A normal:
+    <BLANKLINE>
+    Line for.
+    <BLANKLINE>
+    Testing
+
+    >>> text_indentation("No:Space?After.each sign")
+    No:
+    <BLANKLINE>
+    Space?
+    <BLANKLINE>
+    After.
+    <BLANKLINE>
+    each sign
+
+`text` must be a string
+::
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+	...
+    TypeError: text must be a string
+
+    >>> text_indentation(["List"])
+    Traceback (most recent call last):
+	...
+    TypeError: text must be a string
+
+    >>> text_indentation(65.9)
+    Traceback (most recent call last):
+	...
+    TypeError: text must be a string
+
+    >>> text_indentation()
+
+No spaces at the beginning or end of each line
+::
+    >>> text_indentation("This?  text:   has.    multiple Spaces")
+    This?
+    <BLANKLINE>
+    text:
+    <BLANKLINE>
+    has.
+    <BLANKLINE>
+    multiple Spaces
+
+    >>> text_indentation(" This: text? begins. with a space")
+    This:
+    <BLANKLINE>
+    text?
+    <BLANKLINE>
+    begins.
+    <BLANKLINE>
+    with a space
+
+    >>> text_indentation("   Starts. with? many: spaces")
+    Starts.
+    <BLANKLINE>
+    with?
+    <BLANKLINE>
+    many:
+    <BLANKLINE>
+    spaces
+
+    >>> text_indentation("")
