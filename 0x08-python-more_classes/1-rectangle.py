@@ -34,6 +34,16 @@ class Rectangle:
             ...
         TypeError: height must be an integer
 
+        >>> my_rect = Rectangle(3, "h")
+        Traceback (most recent call last):
+            ...
+        TypeError: height must be an integer
+
+        >>> my_rect = Rectangle("w", 6)
+        Traceback (most recent call last):
+            ...
+        TypeError: width must be an integer
+
     Height and width must not be less than 0
     ::
         >>> my_rect.width = -4
@@ -45,10 +55,20 @@ class Rectangle:
         Traceback (most recent call last):
             ...
         ValueError: height must be >= 0
+
+        >>> my_rect = Rectangle(3, -4)
+        Traceback (most recent call last):
+            ...
+        ValueError: height must be >= 0
+
+        >>> my_rect = Rectangle(-2, 5)
+        Traceback (most recent call last):
+            ...
+        ValueError: width must be >= 0
     """
     def __init__(self, width=0, height=0):
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
