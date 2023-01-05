@@ -71,7 +71,7 @@ class Rectangle:
         12
         >>> my_rect.perimeter()
         14
-        
+
         >>> my_rect = Rectangle(0, 3)
         >>> my_rect.area()
         0
