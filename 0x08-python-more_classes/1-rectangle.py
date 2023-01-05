@@ -21,6 +21,30 @@ class Rectangle:
         6
         >>> my_rect.height
         10
+
+    Height and Width must be integers
+    ::
+        >>> my_rect.width = "w"
+        Traceback (most recent call last):
+            ...
+        TypeError: width must be an integer
+
+        >>> my_rect.height = "h"
+        Traceback (most recent call last):
+            ...
+        TypeError: height must be an integer
+
+    Height and width must not be less than 0
+    ::
+        >>> my_rect.width = -4
+        Traceback (most recent call last):
+            ...
+        ValueError: width must be >= 0
+
+        >>> my_rect.height = -8
+        Traceback (most recent call last):
+            ...
+        ValueError: height must be >= 0
     """
     def __init__(self, width=0, height=0):
         self.__width = width
