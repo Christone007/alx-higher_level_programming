@@ -95,7 +95,7 @@ class Rectangle:
         >>> print(Rectangle(0, 5))
         <BLANKLINE>
         >>> print(Rectangle(5, 0))
-        <BLANKLINE> 
+        <BLANKLINE>
         >>> print(Rectangle(0, 0))
         <BLANKLINE>
 
