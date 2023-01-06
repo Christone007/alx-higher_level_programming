@@ -160,6 +160,15 @@ class Rectangle:
     def __eq__(self, other):
         return self.area() == other.area()
 
+    def __gt__(self, other):
+        return self.area() > other.area()
+
+    def __lt__(self, other):
+        return self.area() < other.area()
+    
+    def __le__(self, other):
+        return self.area() <= other.area()
+
     def __str__(self):
         rect_print = ""
         if self.height == 0 or self.width == 0:
