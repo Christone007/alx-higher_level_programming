@@ -158,7 +158,7 @@ class Rectangle:
         return self.area() >= other.area()
 
     def __eq__(self, other):
-        return self.area() == other.area()
+        return self.height == other.height
 
     def __gt__(self, other):
         return self.area() > other.area()
