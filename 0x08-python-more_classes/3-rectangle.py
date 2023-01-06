@@ -92,6 +92,17 @@ class Rectangle:
         ##
         ##
 
+        >>> print(Rectangle(0, 5))
+        <BLANKLINE>
+        >>> print(Rectangle(5, 0))
+        <BLANKLINE> 
+        >>> print(Rectangle(0, 0))
+        <BLANKLINE>
+
+        >>> print(repr(my_rect)) #doctest: +ELLIPSIS
+        <3-rectangle.Rectangle object at 0x...>
+
+
     """
     def __init__(self, width=0, height=0):
         self.width = width
@@ -122,10 +133,10 @@ class Rectangle:
         self.__height = value
 
     def __str__(self):
-        if self.height == 0 or self.width == 0:
-            return
-
         rect_print = ""
+        if self.height == 0 or self.width == 0:
+            return rect_print
+
         for i in range(self.height):
             for j in range(self.width):
                 rect_print += "#"
