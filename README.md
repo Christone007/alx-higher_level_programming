@@ -5,3 +5,8 @@ The project starts with python3, a high level language written by Guido Van Ross
 
 ## Projects
 Here are a list of projects in this repository
+  
+| Project Code | Project Title |
+| :----------- | :-------------|
+|0x00 | Python - Hello world |
+|0x01| Python - if/else, loops, functions|
