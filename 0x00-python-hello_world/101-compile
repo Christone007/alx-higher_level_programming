@@ -1,11 +1,6 @@
-#!/usr/bin/python3
-import os
-import py_compile
+#!/bin/bash
 
-file_name = os.getenv('PYFILE')
+file_name=$PYFILE
 
-if file_name:
-    if os.path.isfile(file_name):
-        output_file_name = f"{os.path.splitext(file_name)[0]}.pyc"
-        print(f"Compiling {file_name} ...")
-        py_compile.compile(file_name, cfile=output_file_name)
+output_file_name="${file_name%.py}.pyc"
+python3 -m compileall "$file_name" -b -x __pychache__
