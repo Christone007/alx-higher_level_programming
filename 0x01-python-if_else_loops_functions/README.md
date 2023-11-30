@@ -24,3 +24,16 @@ Write a function that prints a string in uppercase followed by a new line.
 Write a function that prints the last digit of a number.
 11. **10. a + b**  
 Write a function that adds two integers and returns the result.
+12. **11. a ^ b**  
+Write a function that computes a to the power of b and return the value.
+13. **12. Fizz Buzz**  
+Write a function that prints the numbers from 1 to 100 separated by a space.
+14. **13. Insert in sorted linked list**Write a function in C that inserts a number into a sorted singly linked list.
+15. **14. Smile in the mirror**  
+Write a program that prints the ASCII alphabet, in reverse order, alternating lowercase and uppercase (z in lowercase and Y in uppercase) , not followed by a new line.
+16. **15. Remove at position**  
+Write a function that creates a copy of the string, removing the character at the position n (not the Python way, the “C array index”)
+17. 16. **ByteCode -> Python #2**
+Write the Python function def magic_calculation(a, b, c): that does exactly the same as the following Python bytecode:
+
+
