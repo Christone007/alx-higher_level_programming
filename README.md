@@ -11,3 +11,4 @@ Here are a list of projects in this repository
 |0x00 | Python - Hello world |
 |0x01| Python - if/else, loops, functions|
 |0x02 | Python - Modules|
+|0x03|Python - Data Structures|
