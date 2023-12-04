@@ -5,10 +5,9 @@ def print_reversed_list_integer(my_list=[]):
     """Print a list in reverse"""
 
     if my_list is not None or len(my_list) > 1:
-        temp_list = my_list.copy()
-        temp_list.reverse()
+        my_list.reverse()
 
-        for i in temp_list:
+        for i in my_list:
             print("{:d}".format(i))
     else:
         print(my_list)
