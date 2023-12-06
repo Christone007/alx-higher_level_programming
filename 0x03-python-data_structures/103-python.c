@@ -1,27 +1,29 @@
 #include <Python.h>
 #include <stdio.h>
 
-void print_python_bytes(PyObject *p) {
+void print_python_bytes(PyObject *p) 
+{
     PyBytesObject *byte_obj = (PyBytesObject *)p;
-    Py_ssize_t size = PyObject_Size(p);
+    Py_ssize_t size = PyBytes_Size(p);
 
     printf("[.] bytes object info\n");
-    printf("  size: %zd\n", size);
-
-    if (size > 0){
-	    printf("  trying string: %s\n", PyUnicode_AsUTF8AndSize(p, NULL));
-	    printf("  first 6 bytes:");
-
-	    for (Py_ssize_t i = 0; i < size && i < 6; ++i) 
-	    {
-		    printf(" %02x", (unsigned char)byte_obj->ob_sval[i]);
-	    }
-	    printf("\n");
+    if (!PyBytes_Check(p))
+    {
+	    printf("[ERROR] Invalid Bytes Object");
+	    return;
     }
+    printf("  size: %zd\n", size);
+    printf("  trying string: %s\n", PyBytes_AsString(p));
+    printf("  first 6 bytes:");
+
+    for (Py_ssize_t i = 0; i < 6; ++i) {
+        printf(" %02x", (unsigned char)PyBytes_AS_STRING(byte_obj)[i]);
+    }
+    printf("\n");
 }
 
 void print_python_list(PyObject *p) {
-    Py_ssize_t size = PyObject_Size(p);
+    Py_ssize_t size = PyList_Size(p);
     Py_ssize_t allocated = ((PyListObject *)p)->allocated;
 
     printf("[*] Python list info\n");
@@ -29,13 +31,13 @@ void print_python_list(PyObject *p) {
     printf("[*] Allocated = %zd\n", allocated);
 
     for (Py_ssize_t i = 0; i < size; ++i) {
-        PyObject *element = ((PyListObject *)p)->ob_item[i];
+        PyObject *element = PyList_GetItem(p, i);
         printf("Element %zd: ", i);
 
         if (PyBytes_Check(element)) {
             print_python_bytes(element);
         } else {
-            printf("%s\n", ((PyObject *)(element))->ob_type->tp_name);
+            printf("%s\n", Py_TYPE(element)->tp_name);
         }
     }
 }
