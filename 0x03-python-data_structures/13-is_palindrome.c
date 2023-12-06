@@ -1,28 +1,6 @@
 #include "lists.h"
 
 /**
- * count_listint - Counts the number of nodes in a singly linked list
- * @h: pointer to head of list
- * Return: number of nodes
- */
-size_t count_listint(const listint_t *h)
-{
-	const listint_t *current;
-	unsigned int n; /* number of nodes */
-
-	current = h;
-	n = 0;
-	while (current != NULL)
-	{
-		current = current->next;
-		n++;
-	}
-
-	return (n);
-}
-
-
-/**
  * is_palindrome - Checks if a list is a palindrome
  * @head: The head of the list
  *
@@ -30,35 +8,36 @@ size_t count_listint(const listint_t *h)
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *p1, *p2;
-	size_t counter, i, j;
+    if (*head == NULL || (*head)->next == NULL)
+        return (1); // An empty list or a single node is considered a palindrome
 
-	i = 0;
-	j = 0;
+    listint_t *slow = *head, *fast = *head, *prev = NULL, *temp;
 
-	p1 = p2 = *head;
-	counter = count_listint(p1);
+    // Use two pointers to find the middle of the list
+    while (fast != NULL && fast->next != NULL)
+    {
+        fast = fast->next->next;
 
-	while (i != counter / 2)
-	{
-		p1 = p2 = *head;
-		for (j = 0; j < i; j++)
-		{
-			p1 = p1->next;
-		}
-		for (j = 0; j < counter - (i + 1); j++)
-		{
-			p2 = p2->next;
-		}
-		if (p1->n != p2->n)
-		{
-			return 0;
-		}
-		else
-		{
-			i++;
-		}
-	}
+        // Reverse the first half of the list while finding the middle
+        temp = slow->next;
+        slow->next = prev;
+        prev = slow;
+        slow = temp;
+    }
 
-	return 1;
+    // Adjust pointers for odd/even length lists
+    if (fast != NULL)
+        slow = slow->next;
+
+    // Compare the reversed first half with the second half
+    while (prev != NULL && slow != NULL)
+    {
+        if (prev->n != slow->n)
+            return (0); // Not a palindrome
+
+        prev = prev->next;
+        slow = slow->next;
+    }
+
+    return (1); // Palindrome
 }
