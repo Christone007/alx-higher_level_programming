@@ -1,6 +1,27 @@
 #include "lists.h"
 
 /**
+ * count_listint - Counts the number of nodes in a singly-linked list
+ * @h: pointer to head of list
+ * Return: number of nodes
+ */
+size_t count_listint(const listint_t *h)
+{
+        const listint_t *current;
+        unsigned int n; /* number of nodes */
+
+        current = h;
+        n = 0;
+        while (current != NULL)
+        {
+                current = current->next;
+                n++;
+        }
+
+        return (n);
+}
+
+/**
  * is_palindrome - Checks if a list is a palindrome
  * @head: The head of the list
  *
@@ -8,36 +29,38 @@
  */
 int is_palindrome(listint_t **head)
 {
-    if (*head == NULL || (*head)->next == NULL)
-        return (1); // An empty list or a single node is considered a palindrome
+        listint_t *p1, *p2;
+        size_t count, i, j;
 
-    listint_t *slow = *head, *fast = *head, *prev = NULL, *temp;
+        p1 = *head;
+        p2 = *head;
+        count = count_listint(p1);
+        j = 1;
 
-    // Use two pointers to find the middle of the list
-    while (fast != NULL && fast->next != NULL)
-    {
-        fast = fast->next->next;
+        if (p1 == NULL)
+                return (1);
 
-        // Reverse the first half of the list while finding the middle
-        temp = slow->next;
-        slow->next = prev;
-        prev = slow;
-        slow = temp;
-    }
+        while (p1 != NULL)
+        {
+                for (i = 1; i < count; i++)
+                {
+                        p2 = p2->next;
+                }
 
-    // Adjust pointers for odd/even length lists
-    if (fast != NULL)
-        slow = slow->next;
+                if (p1->n == p2->n)
+                {
+                        if (i == j || i + 1 == j)
+                                return (1);
+                        p1 = p1->next;
+                        j++;
+                        count--;
+                        p2 = *head;
+                }
+                else
+                {
+                        return (0);
+                }
+        }
 
-    // Compare the reversed first half with the second half
-    while (prev != NULL && slow != NULL)
-    {
-        if (prev->n != slow->n)
-            return (0); // Not a palindrome
-
-        prev = prev->next;
-        slow = slow->next;
-    }
-
-    return (1); // Palindrome
+        return (1);
 }
