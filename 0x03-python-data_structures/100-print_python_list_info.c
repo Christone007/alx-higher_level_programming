@@ -2,6 +2,12 @@
 #include <listobject.h>
 #include <object.h>
 
+/**
+ * print_python_list_info - Prints certain info about a list
+ * @p: The list object
+ *
+ * Return: void
+ */
 void print_python_list_info(PyObject *p)
 {
 	PyListObject *list = (PyListObject *)p;
@@ -15,6 +21,7 @@ void print_python_list_info(PyObject *p)
 	for (Py_ssize_t i = 0; i < size, ++i)
 	{
 		PyObject *element = list->ob_item[i];
+
 		printf("Element %zd: %s\n", i, Py_TYPE(element)->tp_name);
 	}
 }
