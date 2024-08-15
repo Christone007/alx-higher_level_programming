@@ -1,6 +1,7 @@
 #!usr/bin/python3
 
-def safe_print_division(a,b):
+def safe_print_division(a, b):
+    """Print the quotient of a division"""
     try:
         quotient = a / b
     except ZeroDivisionError:
