@@ -8,6 +8,7 @@ Description:
     This is the base module that defines the empty class
 """
 
+
 class Square:
     """This class defines the empty square
 
