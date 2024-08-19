@@ -64,12 +64,12 @@ class Square:
     def my_print(self):
         """Prints the square using the '#' character
         Also prints the square from correct
-        position in space ignoring the y axis
+        position in space
         """
         if self.__size == 0:
             print()
         else:
-            for l in range(self.__position[1]):
+            for m in range(self.__position[1]):
                 print()
             for i in range(self.__size):
                 for j in range(self.__position[0]):
