@@ -11,7 +11,7 @@ class Square:
     """This class defines a square
     """
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Initializes the square
 
         Args:
@@ -45,7 +45,11 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if type(value) is not tuple or len(value) != 2 or value[0] < 0 or value[1] < 0:
+        if not (
+                isinstance(value, tuple) and
+                len(value) == 2 and
+                all(isinstance(x, int) and x >= 0 for x in value)
+                ):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -59,7 +63,9 @@ class Square:
 
     def my_print(self):
         """Prints the square using the '#' character
-        Also prints the square from correct position in space ignoring the y axis"""
+        Also prints the square from correct
+        position in space ignoring the y axis
+        """
         if self.__size == 0:
             print()
         else:
