@@ -83,7 +83,7 @@ class Square:
 
         square_str = ""
         if self.__size == 0:
-            square_str += "\n"
+            square_str += ""
         else:
             for m in range(self.__position[1]):
                 square_str += "\n"
@@ -96,4 +96,3 @@ class Square:
                     square_str += "\n"
 
         return square_str
-
