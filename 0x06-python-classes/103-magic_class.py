@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import math
+
 """Translated manually from pytgon bytecode"""
 
 
