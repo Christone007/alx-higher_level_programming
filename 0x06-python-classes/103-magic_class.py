@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 
+import math
+
 """Translated manually from pytgon bytecode"""
 
 
 class MagicClass:
     """The magic class"""
 
-    def __init__(self, radius):
+    def __init__(self, radius=0):
         self.__radius = 0
         if (
                 type(radius) is not int and
