@@ -80,13 +80,13 @@ Checking non-number with non-number:
          TypeError: a must be an integer
 
 Checking bool with number:
-         >>> add_integer(True, 1)
+         >>> add_integer(True, 1) #doctest: +DONT_ACCEPT_TRUE_FOR_1
          Traceback (most recent call last):
          ...
          TypeError: a must be an integer
 
 Checking number with bool:
-         >>> add_integer(0, False)
+         >>> add_integer(0, False) #doctest: +DONT_ACCEPT_TRUE_FOR_1
          Traceback (most recent call last):
          ...
          TypeError: b must be an integer
@@ -95,16 +95,14 @@ Checking no args:
          >>> add_integer()
          Traceback (most recent call last):
          ...
-         TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+         TypeError: add_integer() missing 1 required positional argument: 'a'
 
 Checking one arg:
          >>> add_integer(1)
-         Traceback (most recent call last):
-         ...
-         TypeError: add_integer() missing 1 required positional argument: 'b'
+         99
 
 Checking more than 2 args:
          >>> add_integer(1, 2, 3)
          Traceback (most recent call last):
          ...
-         TypeError: add_integer() takes 2 positional arguments but 3 were given
+         TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
