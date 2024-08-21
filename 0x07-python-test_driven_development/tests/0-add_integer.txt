@@ -1,4 +1,4 @@
 This is a doctest file to test the function add_integer. It contains example code that cam be tested by the doctest command
->>> from 0-add_integer import add_integer
+>>> add_integer = __import__('../0-add_integer').add_integer
 >>> add_integer(3, 5)
 8
