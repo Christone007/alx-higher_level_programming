@@ -2,3 +2,14 @@ This is a doctest file to test the function add_integer. It contains example cod
 >>> add_integer = __import__('../0-add_integer').add_integer
 >>> add_integer(3, 5)
 8
+>>> add_integer("d", 5)
+Traceback(most recent call last)
+    ...
+TypeError("a must be an integer")
+>>> add_integer(5, 5.3)
+10
+>>> add_integer(4, "3")
+Traceback(most recent call last)
+ ...
+TypeError("b must be an integer")
+
