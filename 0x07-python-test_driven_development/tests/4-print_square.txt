@@ -1,0 +1,87 @@
+Doctest Documentation for the '4-print_square' module
+=====================================================
+
+Description: The 4-print_square module defines a print_square
+    function which takes a 'size' argument which is an integer.
+    The function uses '#' character to print the representation
+    of the square
+---------------------------------------------------------------
+
+MODULE IMPORTS AND DOCUMENTATION
+--------------------------------
+
+checking module import:
+    >>> print_square = __import__("4-print_square").print_square
+
+checking module documentation:
+    >>> m = __import__("4-print_square").__doc__
+    >>> len(m) > 1
+    True
+
+checking function documentation:
+    >>> f = __import__("4-print_square").__doc__
+    >>> len(f) > 1
+    True
+
+CHECKING ARGUMENT TYPE
+----------------------
+checking when size is string:
+    >>> print_square("two")
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+checking when size is a list/tuple/dictionary:
+    >>> print_square([1, 2])
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+    >>> print_square((1, 2))
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+    >>> print_square({"a": 2})
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+checking when size is a float:
+    >>> print_square(2.4)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+    >>> print_square(2.0)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+checking when size is a bool:
+    >>> print_square(True)
+    Traceback (most recent call last):
+	...
+    TypeError: size must be an integer
+
+
+CHECKING ARGUMENT VALUE
+-----------------------
+checking when size is less than 0:
+    >>> print_square(-2)
+    Traceback (most recent call last):
+	...
+    ValueError: size must be >= 0
+
+checking when size is 0:
+    >>> print_square(0)
+
+
+CHECKING CORRECT OUTPUT
+-----------------------
+checking correct output:
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
