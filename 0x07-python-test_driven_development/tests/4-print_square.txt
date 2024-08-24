@@ -77,6 +77,15 @@ checking when size is 0:
     >>> print_square(0)
 
 
+CHECKING NUMBER OF ARGUMENTS
+-----------------------------
+checking when no argument is provied:
+    >>> print_square()
+    Traceback (most recent call last):
+	...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+
 CHECKING CORRECT OUTPUT
 -----------------------
 checking correct output:
