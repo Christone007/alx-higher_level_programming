@@ -1,0 +1,73 @@
+A Doctest Module for the '3-say_my_name' module
+===============================================
+
+Description: The function 'say_my_name()' takes two arguments,
+    a first_name and a last_name. The default last_name is "".
+    It is expected to simply say the names passed into the function
+-------------------------------------------------------------------
+
+CHECK IMPORTS AND DOCSTRINGS
+----------------------------
+Importing the function from the module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Checking for Module docstring:
+    >>> m = __import__("3-say_my_name").__doc__
+    >>> len(m) > 0
+    True
+
+checking for Function docstring:
+    >>> f = __import__("3-say_my_name").__doc__
+    >>> len(f) > 0
+    True
+
+
+CHECKING TYPES
+--------------
+checking when first name is a nunmber:
+    >>> say_my_name(6, "Nwaburu")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+checking when last_name is a number:
+    >>> say_my_name("Emeka", 6.23)
+    Traceback (most recent call last):
+	...
+    TypeError: last_name must be a string
+
+checking when both are numbers:
+    >>> say_my_name(656, 232)
+    Traceback (most recent call last):
+	...
+    TypeError: first_name must be a string
+
+checking when other types are provided:
+    >>> say_my_name(["emy", "chris"], "Nwaburu")
+    Traceback (most recent call last):
+	...
+    TypeError: first_name must be a string
+
+CHECKING PRESENCE OF ARGUMENTS
+------------------------------
+checking when no argument is provided:
+    >>> say_my_name()
+    Traceback (most recent call last):
+	...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+checking when only one argument is provided:
+    >>> say_my_name("Emeka")
+    My name is Emeka 
+
+checking when 3 arguments are provided:
+    >>> say_my_name("Emeka", "Christian", "Nwaburu")
+    Traceback (most recent call last):
+	...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+CHECKING CORRECT OUTPUT
+-----------------------
+checking correct output when two strings are given:
+    >>> say_my_name("Emeka", "Nwaburu")
+    My name is Emeka Nwaburu
