@@ -3,6 +3,8 @@
 """This module divides a list of lists of integers/floats
 It contains only one function
 """
+
+
 def matrix_divided(matrix, div):
     """This function divides a matrix by a given number
 
@@ -23,21 +25,26 @@ def matrix_divided(matrix, div):
     result = []
 
     if type(matrix) is not list:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists)\
+            of integers/floats")
     if len(matrix) == 0:
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        raise TypeError("matrix must be a matrix (list of lists)\
+            of integers/floats")
     if len(matrix) > 0:
         if type(matrix[0]) is not list:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists)\
+            of integers/floats")
         row_length = len(matrix[0])
     for row in matrix:
         if type(row) is not list:
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+            raise TypeError("matrix must be a matrix (list of lists)\
+            of integers/floats")
         if len(row) != row_length:
             raise TypeError("Each row of the matrix must have the same size")
         for elem in row:
             if type(elem) is not int and type(elem) is not float:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError("matrix must be a matrix (list of lists)\
+                of integers/floats")
         try:
             new_row = [round(x/div, 2) for x in row]
         except ZeroDivisionError:
