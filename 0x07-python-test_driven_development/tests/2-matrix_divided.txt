@@ -158,3 +158,27 @@ checking for when div is Zero:
 checking for when div is large float:
     >>> matrix_divided([[2, 4],[6, 8]], 2.438232) #doctest: +NORMALIZE_WHITESPACE
     [[0.82, 1.64], [2.46, 3.28]]
+
+checking for when div is infinite postive
+    >>> matrix_divided([[40, 2, 3],[4, 24, 6]], float('inf'))
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+CHECKING PRESENCE OF ARGUMENTS
+-------------------------------
+checking for when div is ommitted:
+    >>> matrix_divided([[2, 4], [4, 8]])
+    Traceback (most recent call last):
+	...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+checking when no argument is supplied:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+	...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+checking when more than 2 arguments are supplied:
+    >>> matrix_divided([[40, 20], [10, 24]], 3, "a")
+    Traceback (most recent call last):
+	...
+    TypeError: matrix_divided() takes 2 positional arguments but 3 were given
