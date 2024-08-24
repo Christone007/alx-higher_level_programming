@@ -1,0 +1,160 @@
+A Doctest Module for the '2-matrix_divided' module
+==================================================
+
+Description: The function 'matrix_divided' is expected to
+    take a matrix (a list of lists of integers/floats) and divide
+    each element of the matrix by a given number ('div'). The
+    function returns a new matrix after the division
+    using 'matrix_divided'
+----------------------
+
+CHECK IMPORTS AND DOCSTRINGS
+-----------------------------
+Importing the function from the module:
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Checking for module docstring:
+    >>> m = __import__("2-matrix_divided").__doc__
+    >>> len(m) > 0
+    True
+
+Checking for function docstring:
+    >>> f = __import__("2-matrix_divided").matrix_divided.__doc__
+    >>> len(f) > 0
+    True
+
+CHECKING TYPES:
+---------------
+Checking when matrix is None:
+    >>> matrix_divided(None, 3)
+    Traceback (most recent call last):
+    	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking when matrix is integer:
+    >>> matrix_divided(5, 2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking when matrix is a simple list:
+    >>> matrix_divided([10, 20, 30], 2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking when matrix is a tuple:
+    >>> matrix_divided((10, 20, 30), 2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking when matrix is a tuple of lists:
+    >>> matrix_divided(([10, 12, 16], [8, 6, 20]), 2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking when matrix is a tuple of tuples:
+    >>> matrix_divided((("a", "b"), (10, 20), ("this", "that")),2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking when matrix is a list of lists but containing non-number types:
+    >>> matrix_divided([[2, 4, 6], ["a", "b", "this"]], 2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+checking when matrix is a list of lists of integers:
+    >>> matrix_divided([[2, 4, 6],[8, 10, 12]], 2) #doctest: +NORMALIZE_WHITESPACE
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+checking when matrix is a list of lists of floats: #doctest: +NORMALIZE_WHITESPACE 
+    >>> matrix_divided([[2.4, 3.8],[4.5, 6.4]], 2)
+    [[1.2, 1.9], [2.25, 3.2]]
+
+checking when matrix is a list of lists of integers and floats:
+	...					#doctest: +NORMALIZE_WHITESPACE
+    >>> matrix_divided([[2, 3.8], [8, 4.5]], 2)
+    [[1.0, 1.9], [4.0, 2.25]]
+
+checking when matrix is a list of lists with just one list of ints and floats:
+    >>> matrix_divided([[6, 9]], 2) #doctest: +NORMALIZE_WHITESPACE
+    [[3.0, 4.5]]
+
+checking when matrix is just a list:
+    >>> matrix_divided([4, 8, 10], 2)
+    Traceback (most recent call last):
+	...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+TESTS FOR MATRIX ROW SIZES
+--------------------------
+
+checking for matrix with different row sizes:
+    >>> matrix_divided([[2, 4, 6],[8, 10]], 2)
+    Traceback (most recent call last):
+	...
+    TypeError: Each row of the matrix must have the same size
+
+checking for matrix with same row sizes:
+    >>> matrix_divided([[2, 4, 6],[8, 10, 12]], 2)
+    [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+
+TESTS FOR TYPE OF 'div'
+-----------------------
+
+checking for when div is None:
+    >>> matrix_divided([[2, 4],[6, 8]], None)
+    Traceback (most recent call last):
+	...
+    TypeError: div must be a number
+
+checking for when div is a string:
+    >>> matrix_divided([[2, 4], [6, 8]], "two")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+checking for when div is a tuple:
+    >>> matrix_divided([[2, 4], [6, 8]], (2, 4))
+    Traceback (most recent call last):
+	...
+    TypeError: div must be a number
+
+checking for when div is a list:
+    >>> matrix_divided([[2, 4, 6],[8, 10, 12]],[1, 2])
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+
+checking for when div is boolean:
+    >>> matrix_divided([[2, 4],[6, 8]], True)
+    Traceback (most recent call last):
+	...
+    TypeError: div must be a number
+
+checking for when div is an integer:
+    >>> matrix_divided([[2, 4], [6, 8]], 2) #doctest: +NORMALIZE_WHITESPACE
+    [[1.0, 2.0], [3.0, 4.0]]
+
+checking for when div is a float:
+    >>> matrix_divided([[2, 4], [6, 8]], 2.0) #doctest: +NORMALIZE_WHITESPACE
+    [[1.0, 2.0], [3.0, 4.0]]
+
+
+CHECKING VALUE OF 'div'
+-----------------------
+checking for when div is Zero: 
+    >>> matrix_divided([[2, 4], [6, 8]], 0)
+    Traceback (most recent call last):
+	...
+    ZeroDivisionError: division by zero
+
+checking for when div is large float:
+    >>> matrix_divided([[2, 4],[6, 8]], 2.438232) #doctest: +NORMALIZE_WHITESPACE
+    [[0.82, 1.64], [2.46, 3.28]]
