@@ -32,8 +32,8 @@ def matrix_mul(m_a, m_b):
     if len(m_b) == 0:
         raise ValueError("m_b can't be empty")
    
-   #validate matrix a
-   if len(m_a) > 0:
+    #validate matrix a
+    if len(m_a) > 0:
        if type(m_a[0]) is not list:
            raise TypeError("m_a must be a list of lists")
        if len(m_a) == 1 and len(m_a[0]) == 0:
@@ -69,6 +69,19 @@ def matrix_mul(m_a, m_b):
         rows_b += 1
 
     #check if both matrices can be multiplied
+    if cols_a != rows_b:
+        raise ValueError("m_a and m_b can't be multiplied")
 
     #multiply matrices
+    matrix = []
+    
+    for i in range(rows_a):
+        result = []
+        for j in range(cols_b):
+            prod = 0
+            for k in range(cols_a):
+                prod += m_a[i][k] * m_b[k][j]
+            result.append(round(prod, 2))
+        matrix.append(result)
 
+    return matrix
