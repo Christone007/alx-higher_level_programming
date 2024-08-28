@@ -49,6 +49,7 @@ class Rectangle:
 
         self.__height = value
 
+
     def area(self):
         """Calculates the area of the rectangle"""
 
@@ -71,7 +72,7 @@ class Rectangle:
 
         for i in range(self.__height):
             for j in range(self.__width):
-                rect += Rectangle.print_symbol
+                rect += str(self.print_symbol)
             if i < self.__height - 1:
                 rect += "\n"
 
