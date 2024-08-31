@@ -8,3 +8,6 @@ class LockedClass:
     """Restricts objects from creating extra attributes
     """
     __slot__ = ["first_name"]
+
+    def __init__(self):
+        pass
