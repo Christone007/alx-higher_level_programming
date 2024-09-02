@@ -1,0 +1,70 @@
+DOCTEST FILE FOR '7-base_geometry' MODULE
+=========================================
+
+Description: The module is expected to contain
+    well-documented code that contains a class
+    named Geometry wgich defines a few methods
+    like the area() and the integer_validator()
+    methods.  The area() is not implemented and
+    is expected to throw an exception whereas the
+    integer_validator() throws an exception if
+    value provided is not int or is <= 0
+
+IMPORT REQUIRED MODULES
+-----------------------
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+CREATE AND CONFIRM OBJECTS
+--------------------------
+Create Object and Confirm its Type:
+    >>> obj = BaseGeometry()
+    >>> type(obj) is BaseGeometry
+    True
+
+
+CHECK THE area() METHOD
+-----------------------
+Call the Method without Args:
+    >>> obj.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+    
+
+Call the method with Args:
+    >>> obj.area("unwanted")
+    Traceback (most recent call last):
+        ...
+    TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+
+CHECK THE integer_validator() METHOD
+------------------------------------
+Call the Method with string values:
+    >>> obj.integer_validator("age", "one")
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Call the Method with Boolean values:
+    >>> obj.integer_validator("age", True)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
+Call the Method with value less than 0:
+    >>> obj.integer_validator("age", -5)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
+
+Call the Method with value = 0:
+    >>> obj.integer_validator("age", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: age must be greater than 0
+
+
+Call the method with value greater than 0:
+    >>> obj.integer_validator("age", 5)
