@@ -20,6 +20,9 @@ CHECKING EMPTY LIST
 >>> print(l)
 []
 
+>>> l.print_sorted()
+[]
+
 Checking if inheritance occured
 -------------------------------
 >>> l = MyList()
@@ -91,3 +94,17 @@ Checking list with repeating ints
 
 >>> l.print_sorted()
 [-3, -3, 1, 4, 4, 4, 9, 9]
+
+Checking if a new list is returned
+----------------------------------
+>>> l = MyList()
+>>> l.append(2)
+>>> l.append(1)
+>>> l.append(4)
+>>> print(l)
+[2, 1, 4]
+
+>>> l.print_sorted()
+[1, 2, 4]
+>>> print(l)
+[2, 1, 4]
