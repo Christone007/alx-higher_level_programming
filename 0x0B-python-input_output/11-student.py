@@ -29,6 +29,7 @@ class Student:
 
     def reload_from_json(self, json):
         """Loads an object's attributes from a json serializable dict"""
-        self.__dict__ = {}
+        if len(json) > 0:
+            self.__dict__ = {}
         for k, v in json.items():
             self.__dict__[k] = v
