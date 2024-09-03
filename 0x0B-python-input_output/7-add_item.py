@@ -15,9 +15,10 @@ def main(args):
         obj_list = load_from_json_file(filename)
     except FileNotFoundError:
         obj_list = []
-    
+
     obj_list += args
     save_to_json_file(obj_list, filename)
+
 
 if __name__ == "__main__":
     main(sys.argv[1:])
