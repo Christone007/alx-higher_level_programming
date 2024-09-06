@@ -28,3 +28,20 @@ class Square(Rectangle):
             self.height = value
         except Exception:
             raise
+
+    def update(self, *args, **kwargs):
+        """Updates the square object"""
+        if len(args) != 0:
+            try:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+            except IndexError:
+                pass
+        else:
+            try:
+                for k, v in kwargs.items():
+                    setattr(self, k, v)
+            except Exception:
+                pass
