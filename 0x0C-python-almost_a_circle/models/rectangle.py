@@ -100,3 +100,8 @@ class Rectangle(Base):
         """Checks if a number is >= 0"""
         if attr_value < 0:
             raise ValueError(f"{attr_name} must be >= 0")
+
+    def area(self):
+        """Calculates the area of the rectangle object"""
+
+        return self.__width * self.__height
