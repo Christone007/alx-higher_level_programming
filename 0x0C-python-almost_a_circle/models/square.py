@@ -45,6 +45,7 @@ class Square(Rectangle):
                     setattr(self, k, v)
             except Exception:
                 pass
+
     def to_dictionary(self):
         """Returns a dictionary representation of a square object"""
         return ({"id": self.id, "size": self.size, "x": self.x, "y": self.y})
