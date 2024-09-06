@@ -86,17 +86,20 @@ class Rectangle(Base):
 
         self.__y = value
 
-    def is_integer(self, attr_name, attr_value):
+    @staticmethod
+    def is_integer(attr_name, attr_value):
         """Checks if a value is an integer"""
         if type(attr_value) is not int:
             raise TypeError(f"{attr_name} must be an integer")
 
-    def is_natural_number(self, attr_name, attr_value):
+    @staticmethod
+    def is_natural_number(attr_name, attr_value):
         """Checks if a number is > 0"""
         if attr_value <= 0:
             raise ValueError(f"{attr_name} must be > 0")
 
-    def is_not_negative(self, attr_name, attr_value):
+    @staticmethod
+    def is_not_negative(attr_name, attr_value):
         """Checks if a number is >= 0"""
         if attr_value < 0:
             raise ValueError(f"{attr_name} must be >= 0")
@@ -105,3 +108,11 @@ class Rectangle(Base):
         """Calculates the area of the rectangle object"""
 
         return self.__width * self.__height
+
+    def display(self):
+        """Print the rectangle using the '#' character"""
+
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            print()
