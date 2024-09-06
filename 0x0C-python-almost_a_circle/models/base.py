@@ -4,6 +4,7 @@
 This module creates a base class
 """
 
+
 class Base:
     """
     The Base Class
