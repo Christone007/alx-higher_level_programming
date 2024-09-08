@@ -49,3 +49,7 @@ class Square(Rectangle):
     def to_dictionary(self):
         """Returns a dictionary representation of a square object"""
         return ({"id": self.id, "size": self.size, "x": self.x, "y": self.y})
+
+    def to_csv(self):
+        """Returns a csv format representation of a square object"""
+        return f"{self.id},{self.size},{self.x},{self.y}"

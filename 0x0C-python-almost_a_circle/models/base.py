@@ -30,7 +30,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Write JSON string to file"""
+        """Write JSON representation of objects to file"""
         try:
             filename = cls.__name__ + ".json"
             with open(filename, "w", encoding="utf-8") as f:
@@ -77,3 +77,19 @@ class Base:
 
         list_of_dicts = cls.from_json_string(saved_json)
         return [cls.create(**x) for x in list_of_dicts]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save the Objects in a CSV file"""
+       try:
+           with open(cls.__name__ + ".json", 'w', encoding="utf-8") as f:
+               if list_objs is None or len(list_objs) == 0:
+                   f.write("[]")
+
+        except Exception:
+            raise
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load objects from a CSV file"""
+        pass

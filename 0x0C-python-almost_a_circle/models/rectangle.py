@@ -149,3 +149,7 @@ class Rectangle(Base):
         """Returns a dictionary representation of a rectangle object"""
         return ({"id": self.id, "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y})
+
+    def to_csv(self):
+        """Returns a csv formatted representation of a rectangle object"""
+        return f"{self.id},{self.width},{self.height},{self.x},{self.y}"
