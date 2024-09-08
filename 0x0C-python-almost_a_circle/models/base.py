@@ -85,6 +85,8 @@ class Base:
            with open(cls.__name__ + ".json", 'w', encoding="utf-8") as f:
                if list_objs is None or len(list_objs) == 0:
                    f.write("[]")
+               else:
+                   f.writelines([x.to_csv() for x in list_objs])
 
         except Exception:
             raise
