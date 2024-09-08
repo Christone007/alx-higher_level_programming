@@ -39,6 +39,6 @@ class Base:
                 else:
                     my_list_dict = [x.to_dictionary() for x in list_objs]
                     f.write(cls.to_json_string(my_list_dict))
-                    
+
         except Exception:
             pass
