@@ -42,3 +42,15 @@ class Base:
 
         except Exception:
             pass
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Parses a JSON string into a list object
+
+        Args:
+            json_string (str): Represents a list of dictionaries
+        """
+
+        if json_string is None:
+            return []
+        return json.loads(json_string)
