@@ -35,8 +35,10 @@ class Base:
             filename = cls.__name__ + ".json"
             with open(filename, "w", encoding="utf-8") as f:
                 if list_objs is None:
-                    json.dump([], f)
+                    f.write(cls.to_json_string([]))
                 else:
-                    json.dump([x.to_dictionary() for x in list_objs], f)
+                    my_list_dict = [x.to_dictionary() for x in list_objs]
+                    f.write(cls.to_json_string(my_list_dict))
+                    
         except Exception:
             pass
