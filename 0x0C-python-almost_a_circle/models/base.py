@@ -45,7 +45,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Parses a JSON string into a list object
+        """Parses a JSON string into a list of dictionaries
 
         Args:
             json_string (str): Represents a list of dictionaries
@@ -65,3 +65,15 @@ class Base:
 
         dummy_obj.update(**dictionary)
         return dummy_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Parses JSON from a file into a list of objects"""
+        try:
+            with open(cls.__name__+".json", "r", encoding="utf-8") as f:
+                saved_json = f.read()
+        except FileNotFoundError:
+            return []
+
+        list_of_dicts = cls.from_json_string(saved_json)
+        return [cls.create(**x) for x in list_of_dicts]
