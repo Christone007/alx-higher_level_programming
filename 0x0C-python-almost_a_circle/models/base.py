@@ -39,4 +39,4 @@ class Base:
                 else:
                     json.dump([x.to_dictionary() for x in list_objs], f)
         except Exception:
-            raise
+            pass
