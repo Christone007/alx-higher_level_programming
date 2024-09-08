@@ -35,7 +35,7 @@ class Base:
             filename = cls.__name__ + ".json"
             with open(filename, "w", encoding="utf-8") as f:
                 if list_objs is None:
-                    json.dump("[]", f)
+                    json.dump([], f)
                 else:
                     json.dump([x.to_dictionary() for x in list_objs], f)
         except Exception:
