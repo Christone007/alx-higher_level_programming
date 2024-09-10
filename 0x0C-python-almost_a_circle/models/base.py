@@ -111,7 +111,6 @@ class Base:
 
                list_csv = [line[:-1] for line in list_csvs]
                to_list = [list(map(int, x.split(','))) for x in list_csv]
-               print(f"DEBUG: {list_csv} and {to_list}")
                return [cls.create_from_list(*x) for x in to_list]
         except Exception:
             raise
