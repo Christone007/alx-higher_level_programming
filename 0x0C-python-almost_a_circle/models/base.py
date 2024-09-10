@@ -93,11 +93,11 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """Save the Objects in a CSV file"""
         try:
-           with open(cls.__name__ + ".csv", 'w', encoding="utf-8") as f:
-               if list_objs is None or len(list_objs) == 0:
-                   f.write("[]")
-               else:
-                   f.writelines([x.to_csv() for x in list_objs])
+            with open(cls.__name__ + ".csv", 'w', encoding="utf-8") as f:
+                if list_objs is None or len(list_objs) == 0:
+                    f.write("[]")
+                else:
+                    f.writelines([x.to_csv() for x in list_objs])
 
         except Exception:
             raise
@@ -106,11 +106,11 @@ class Base:
     def load_from_file_csv(cls):
         """Load objects from a CSV file"""
         try:
-           with open(cls.__name__ + ".csv", "r", encoding="utf-8") as f:
-               list_csvs = f.readlines()
+            with open(cls.__name__ + ".csv", "r", encoding="utf-8") as f:
+                list_csvs = f.readlines()
 
-               list_csv = [line[:-1] for line in list_csvs]
-               to_list = [list(map(int, x.split(','))) for x in list_csv]
-               return [cls.create_from_list(*x) for x in to_list]
+                list_csv = [line[:-1] for line in list_csvs]
+                to_list = [list(map(int, x.split(','))) for x in list_csv]
+                return [cls.create_from_list(*x) for x in to_list]
         except Exception:
             raise
