@@ -52,4 +52,4 @@ class Square(Rectangle):
 
     def to_csv(self):
         """Returns a csv format representation of a square object"""
-        return f"{self.id},{self.size},{self.x},{self.y}"
+        return f"{self.id},{self.size},{self.x},{self.y}\n"

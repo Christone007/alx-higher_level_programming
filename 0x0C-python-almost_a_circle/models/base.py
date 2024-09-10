@@ -67,6 +67,17 @@ class Base:
         return dummy_obj
 
     @classmethod
+    def create_from_list(cls, *list_args):
+        """Creates an object from a list"""
+        if cls.__name__ == "Rectangle":
+            dummy_obj = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy_obj = cls(1)
+
+        dummy_obj.update(*list_args)
+        return dummy_obj
+
+    @classmethod
     def load_from_file(cls):
         """Parses JSON from a file into a list of objects"""
         try:
@@ -81,8 +92,8 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Save the Objects in a CSV file"""
-       try:
-           with open(cls.__name__ + ".json", 'w', encoding="utf-8") as f:
+        try:
+           with open(cls.__name__ + ".csv", 'w', encoding="utf-8") as f:
                if list_objs is None or len(list_objs) == 0:
                    f.write("[]")
                else:
@@ -94,4 +105,13 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Load objects from a CSV file"""
-        pass
+        try:
+           with open(cls.__name__ + ".csv", "r", encoding="utf-8") as f:
+               list_csvs = f.readlines()
+
+               list_csv = [line[:-1] for line in list_csvs]
+               to_list = [list(map(int, x.split(','))) for x in list_csv]
+               print(f"DEBUG: {list_csv} and {to_list}")
+               return [cls.create_from_list(*x) for x in to_list]
+        except Exception:
+            raise
