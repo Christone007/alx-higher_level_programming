@@ -9,3 +9,5 @@ The introductory repository for basic projects in python
 |2| Hello, print| Quotation marks must be properly nested or escaped|
 |3| Print integer| Using f string to print variables is easy |
 |4| Print float| Just use the correct formatters |
+|5| Print string| Print a string|
+
