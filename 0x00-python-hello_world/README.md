@@ -10,4 +10,5 @@ The introductory repository for basic projects in python
 |3| Print integer| Using f string to print variables is easy |
 |4| Print float| Just use the correct formatters |
 |5| Print string| Print a string|
-
+|6| Play with strings| I don't understand why single quotes surrounding the space between two words doesn't seem to pass the test|
+|7| Copy-Cut-Paste| Definitely tests my ability to slice text|
