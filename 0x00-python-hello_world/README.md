@@ -12,3 +12,4 @@ The introductory repository for basic projects in python
 |5| Print string| Print a string|
 |6| Play with strings| I don't understand why single quotes surrounding the space between two words doesn't seem to pass the test|
 |7| Copy-Cut-Paste| Definitely tests my ability to slice text|
+|8| Create a new sentence| Very unnecessary counting stress|
