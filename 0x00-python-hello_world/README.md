@@ -14,3 +14,4 @@ The introductory repository for basic projects in python
 |7| Copy-Cut-Paste| Definitely tests my ability to slice text|
 |8| Create a new sentence| Very unnecessary counting stress|
 |9| Easter Egg| I printed the zen of Python using less than half the allowed number of characters 😎|
+|10| Linked List Cycle| The hare and tortoise algorithm never grows old, came in quite handy|
