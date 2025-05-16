@@ -15,3 +15,5 @@ The introductory repository for basic projects in python
 |8| Create a new sentence| Very unnecessary counting stress|
 |9| Easter Egg| I printed the zen of Python using less than half the allowed number of characters 😎|
 |10| Linked List Cycle| The hare and tortoise algorithm never grows old, came in quite handy|
+|11| Hello, write | RTFD didn't help, because I would not have known that i could call sys.stderr.write|
+
